@@ -1,8 +1,16 @@
+const { fetchCurrentBitcoinPrice } = require('./utils');
+
 module.exports = {
   Query: {
-    calculatePrice: (parent, args, context) => {
-      console.log({ parent, args, context })
-      return 2.3
+    calculatePrice: async (_, args, __) => {
+      const { type, margin, exchangeRate } = args
+      const btcCurrentPrice = await fetchCurrentBitcoinPrice();
+
+      const computedMarginValue = (margin / 100);
+
+      const finalBtcPrice = type === 'sell' ? (btcCurrentPrice - computedMarginValue) : (btcCurrentPrice + computedMarginValue)
+      const btcInNaira = (finalBtcPrice * exchangeRate).toFixed(2);
+      return `NGN ${btcInNaira}`;
     }
   }
 }

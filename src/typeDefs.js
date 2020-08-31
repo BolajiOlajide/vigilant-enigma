@@ -5,6 +5,6 @@ module.exports = `
   }
 
   type Query {
-    calculatePrice(type: EntityType, margin: Float, exchangeRate: Float): Float!
+    calculatePrice(type: EntityType!, margin: Float!, exchangeRate: Float!): String!
   }
 `;
