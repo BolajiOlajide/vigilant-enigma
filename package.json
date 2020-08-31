@@ -6,6 +6,16 @@
   "author": "Bolaji Olajide",
   "license": "MIT",
   "dependencies": {
-    "graphql-yoga": "^1.18.3"
+    "dotenv": "^8.2.0",
+    "graphql-yoga": "^1.18.3",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "jest": "^26.4.2",
+    "nodemon": "^2.0.4"
+  },
+  "scripts": {
+    "dev": "nodemon .",
+    "start": "node ."
   }
 }
