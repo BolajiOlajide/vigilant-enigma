@@ -3,7 +3,7 @@ const { fetchCurrentBitcoinPrice } = require('./utils');
 module.exports = {
   Query: {
     calculatePrice: async (_, args, __) => {
-      const { type, margin, exchangeRate } = args
+      const { type, margin, exchangeRate } = args;
       const btcCurrentPrice = await fetchCurrentBitcoinPrice();
 
       const computedMarginValue = (margin / 100);

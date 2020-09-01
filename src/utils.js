@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 
 const { COINDESK_URL } = require('./config');
 
-exports.fetchCurrentBitcoinPrice = async () => {
+const fetchCurrentBitcoinPrice = async () => {
   try {
     const response = await fetch(COINDESK_URL);
     const result = await response.json();
@@ -12,3 +12,5 @@ exports.fetchCurrentBitcoinPrice = async () => {
     return Promise.reject('The Coindesk API cannot be reached. Please try again.')
   }
 };
+
+module.exports = { fetchCurrentBitcoinPrice };

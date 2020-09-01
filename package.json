@@ -11,11 +11,17 @@
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
+    "graphql-request": "^3.0.0",
     "jest": "^26.4.2",
     "nodemon": "^2.0.4"
   },
   "scripts": {
     "dev": "nodemon .",
-    "start": "node ."
+    "start": "node .",
+    "test": "jest"
+  },
+  "jest": {
+    "verbose": true,
+    "notify": true
   }
 }
